@@ -1,0 +1,17 @@
+version: 4.2.29
+session: 68064692928511f83c0c7f9e
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Assert the "Payment On Account" option is selected by default.
+    commands:
+      - command: assert
+        expect: the "Payment On Account" option is selected by default
+  - prompt: Click on the "Bill Payment" option.
+    commands:
+      - command: hover-text
+        text: Bill Payment
+        description: bill payment radio button
+        action: click
