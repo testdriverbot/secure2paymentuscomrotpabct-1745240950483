@@ -1,0 +1,19 @@
+version: 4.2.29
+session: 680644b3928511f83c0c7f4d
+steps:
+  - prompt: >-
+      login with username "6759371 is the account number" and password "12345 is
+      the zip code"
+    commands:
+      - command: hover-text
+        text: Enter your account number
+        description: account number input field
+        action: click
+      - command: type
+        text: 6759371 is the account number
+      - command: hover-text
+        text: Enter your zip code
+        description: zip code input field
+        action: click
+      - command: type
+        text: 12345 is the zip code
