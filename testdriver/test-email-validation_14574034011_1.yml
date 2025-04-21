@@ -1,0 +1,31 @@
+version: 4.2.29
+session: 68064693fd926217843c74ba
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Click on "Email" input field.
+    commands:
+      - command: hover-text
+        text: Enter email address
+        description: email input field
+        action: click
+  - prompt: Type an invalid email format.
+    commands:
+      - command: hover-text
+        text: Enter email address
+        description: email input field
+        action: click
+      - command: type
+        text: invalid-email
+  - prompt: Click the "Continue" button.
+    commands:
+      - command: hover-text
+        text: Continue
+        description: blue button below the form
+        action: click
+  - prompt: Assert that a validation error message is displayed for the email field.
+    commands:
+      - command: assert
+        expect: Email format is not valid
