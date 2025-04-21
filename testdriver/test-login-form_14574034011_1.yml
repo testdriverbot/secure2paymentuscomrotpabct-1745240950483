@@ -1,0 +1,74 @@
+version: 4.2.29
+session: 680646c8928511f83c0c7fb0
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Click on "Account Number" input field.
+    commands:
+      - command: hover-text
+        text: Account Number
+        description: account number input field
+        action: click
+  - prompt: Type a test account number.
+    commands:
+      - command: hover-text
+        text: Account Number
+        description: account number input field
+        action: click
+      - command: press-keys
+        keys:
+          - control
+          - a
+      - command: press-keys
+        keys:
+          - backspace
+      - command: type
+        text: '123456789'
+  - prompt: Click on "ZIP Code" input field.
+    commands:
+      - command: hover-text
+        text: ZIP Code
+        description: zip code input field
+        action: click
+  - prompt: Type a test ZIP code.
+    commands:
+      - command: hover-text
+        text: ZIP Code
+        description: zip code input field
+        action: click
+      - command: press-keys
+        keys:
+          - control
+          - a
+      - command: press-keys
+        keys:
+          - backspace
+      - command: type
+        text: '98765'
+  - prompt: Type a test ZIP code.
+    commands:
+      - command: hover-text
+        text: ZIP Code
+        description: zip code input field
+        action: click
+      - command: press-keys
+        keys:
+          - control
+          - a
+      - command: press-keys
+        keys:
+          - backspace
+      - command: type
+        text: '98765'
+  - prompt: Click the "Continue" button.
+    commands:
+      - command: hover-text
+        text: Continue
+        description: continue button below the form fields
+        action: click
+  - prompt: Assert that the login is successful or an error message is displayed.
+    commands:
+      - command: assert
+        expect: Account number is invalid
